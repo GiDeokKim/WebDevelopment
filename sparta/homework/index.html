@@ -3,7 +3,7 @@
 
 <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
+    <meta charset="euc-kr">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
@@ -20,7 +20,7 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"></script>
 
-    <title>ìŠ¤íŒŒë¥´íƒ€ì½”ë”©í´ëŸ½ | ë¶€íŠ¸ìŠ¤íŠ¸ë© ì—°ìŠµí•˜ê¸°</title>
+    <title>½ºÆÄ¸£Å¸ÄÚµùÅ¬·´ | ºÎÆ®½ºÆ®·¦ ¿¬½ÀÇÏ±â</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
@@ -63,55 +63,76 @@
             width: 500px;
             margin: auto;
         }
+
+        .rate {
+            color: blue;
+        }
     </style>
 
     <script>
+        $(document).ready(function () {
+            get_rate();
+        });
+
+        function get_rate(){
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/rate",
+                data: {},
+                success: function (response) {
+                    let now_rate = response['rate'];
+                    $('#now-rate').text(now_rate);
+                }
+            })
+        }
+
         function order() {
-            alert('ì£¼ë¬¸ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤!');
+            alert('ÁÖ¹®ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù!');
         }
     </script>
 </head>
 
 <body>
-    <div class="wrap">
-        <div class="item-img"></div>
-        <div class="item-desc">
-            <h1>ì–‘ì´ˆë¥¼ íŒë‹ˆë‹¤ <span class="price">ê°€ê²©:3,000ì›/ê°œ</span></h1>
-            <p>ì´ ì–‘ì´ˆëŠ” ì‚¬ì‹¤ íŠ¹ë³„í•œ í˜ì„ ì§€ë‹ˆê³  ìˆì–´ìš”!</p>
-        </div>
-        <div class="item-order">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">ì£¼ë¬¸ìì´ë¦„</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <label class="input-group-text" for="inputGroupSelect01">ìˆ˜ëŸ‰</label>
-                </div>
-                <select class="custom-select" id="inputGroupSelect01">
-                    <option selected>-- ìˆ˜ëŸ‰ì„ ì„ íƒí•˜ì„¸ìš” --</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">ì£¼ì†Œ</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">ì „í™”ë²ˆí˜¸</span>
-                </div>
-                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            </div>
-            <button type="button" onclick="order()" class="btn btn-primary btn-order">ì£¼ë¬¸í•˜ê¸°</button>
-        </div>
+<div class="wrap">
+    <div class="item-img"></div>
+    <div class="item-desc">
+        <h1>¾çÃÊ¸¦ ÆË´Ï´Ù <span class="price">°¡°İ:3,000¿ø/°³</span></h1>
+        <p>ÀÌ ¾çÃÊ´Â »ç½Ç Æ¯º°ÇÑ ÈûÀ» Áö´Ï°í ÀÖ¾î¿ä!</p>
+        <p class="rate">´Ş·¯-¿ø È¯À²: <span id="now-rate">1219.15</span></p>
     </div>
+    <div class="item-order">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">ÁÖ¹®ÀÚÀÌ¸§</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">¼ö·®</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>-- ¼ö·®À» ¼±ÅÃÇÏ¼¼¿ä --</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">ÁÖ¼Ò</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">ÀüÈ­¹øÈ£</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <button type="button" onclick="order()" class="btn btn-primary btn-order">ÁÖ¹®ÇÏ±â</button>
+    </div>
+</div>
 </body>
 
 </html>

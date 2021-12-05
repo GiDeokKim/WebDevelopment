@@ -2,10 +2,10 @@
 <html lang="ko">
 
 <head>
-    <meta charset="UTF-8">
-    <title>jQuery ì—°ìŠµí•˜ê³  ê°€ê¸°!</title>
+    <meta charset="euc-kr">
+    <title>jQuery ¿¬½ÀÇÏ°í °¡±â!</title>
 
-    <!-- jQueryë¥¼ import í•©ë‹ˆë‹¤ -->
+    <!-- jQuery¸¦ import ÇÕ´Ï´Ù -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <style type="text/css">
@@ -21,7 +21,7 @@
 
     <script>
         function q1() {
-            // ì—¬ê¸°ì— ì½”ë“œë¥¼ ìž…ë ¥í•˜ì„¸ìš”
+            // ¿©±â¿¡ ÄÚµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä
             $('#names-q1').empty();
             $.ajax({
                 type: "GET",
@@ -51,15 +51,15 @@
 </head>
 
 <body>
-    <h1>jQuery+Ajaxì˜ ì¡°í•©ì„ ì—°ìŠµí•˜ìž!</h1>
+    <h1>jQuery+AjaxÀÇ Á¶ÇÕÀ» ¿¬½ÀÇÏÀÚ!</h1>
 
     <hr/>
 
     <div class="question-box">
-        <h2>1. ì„œìš¸ì‹œ OpenAPI(ì‹¤ì‹œê°„ ë¯¸ì„¸ë¨¼ì§€ ìƒíƒœ)ë¥¼ ì´ìš©í•˜ê¸°</h2>
-        <p>ëª¨ë“  êµ¬ì˜ ë¯¸ì„¸ë¨¼ì§€ë¥¼ í‘œê¸°í•´ì£¼ì„¸ìš”</p>
-        <p>ì—…ë°ì´íŠ¸ ë²„íŠ¼ì„ ëˆ„ë¥¼ ë•Œë§ˆë‹¤ ì§€ì› ë‹¤ ìƒˆë¡œ ì”Œì—¬ì ¸ì•¼ í•©ë‹ˆë‹¤.</p>
-        <button onclick="q1()">ì—…ë°ì´íŠ¸</button>
+        <h2>1. ¼­¿ï½Ã OpenAPI(½Ç½Ã°£ ¹Ì¼¼¸ÕÁö »óÅÂ)¸¦ ÀÌ¿ëÇÏ±â</h2>
+        <p>¸ðµç ±¸ÀÇ ¹Ì¼¼¸ÕÁö¸¦ Ç¥±âÇØÁÖ¼¼¿ä</p>
+        <p>¾÷µ¥ÀÌÆ® ¹öÆ°À» ´©¸¦ ¶§¸¶´Ù Áö¿ü´Ù »õ·Î ¾º¿©Á®¾ß ÇÕ´Ï´Ù.</p>
+        <button onclick="q1()">¾÷µ¥ÀÌÆ®</button>
         <ul id="names-q1">
         </ul>
     </div>
