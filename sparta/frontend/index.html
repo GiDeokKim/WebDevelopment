@@ -51,15 +51,15 @@
     </style>
 
     <script>
-        let count = 1;
-
-        function hey() {
-            if (count % 2 == 0) {
-                alert('짝짝짝?');
+        function openclose() {
+            let status = $('#post-box').css('display');
+            if (status == 'block') {
+                $('#post-box').hide()
+                $('#posting-box-btn').text('포스팅박스 열기')
             } else {
-                alert('홀홀홀?');
+                $('#post-box').show()
+                $('#posting-box-btn').text('포스팅박스 닫기')
             }
-            count += 1;
         }
     </script>
 </head>
@@ -71,18 +71,18 @@
             <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
             <hr class="my-4">
             <p class="lead">
-                <a onclick="hey()" id="btn-posting-box" class="btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
+                <a id="posting-box-btn" onclick="openclose()" class="btn btn-primary btn-lg" href="#"
+                   role="button">포스팅박스 열기</a>
             </p>
         </div>
 
         <div class="posting-box" id="post-box">
             <div class="form-group">
                 <label>아티클 URL</label>
-                <input type="email" class="form-control" id="article-url" aria-describedby="emailHelp"
-                       placeholder="">
+                <input id="post-url" type="email" class="form-control" aria-describedby="emailHelp" placeholder="">
             </div>
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">간단 코멘트</label>
+                <label>간단 코멘트</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">기사 저장</button>
@@ -142,5 +142,4 @@
         </div>
     </div>
 </body>
-
 </html>
